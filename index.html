@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Khushi Malik </title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
 </head>
-
 <body>
-    <div id="nav">
+    <div id="nav" style="position: relative; z-index: 10000;">
         <h3><b>KHUSHI</b> MALIK</h3>
-        <button>CONTACT</button>
+        <button id="contactBtn" aria-haspopup="true" aria-expanded="false"
+            style="appearance: none; -webkit-appearance: none; background: linear-gradient(135deg,#6C5CE7 0%,#A66FE9 50%,#F3A4B5 100%);
+                   color: #fff; border: none; padding: 10px 18px; border-radius: 999px; font-weight: 700; letter-spacing: .6px;
+                   cursor: pointer; box-shadow: 0 10px 22px rgba(108,92,231,.35); transition: transform .15s, box-shadow .15s;">
+            CONTACT
+        </button>
+        <div id="contactDropdown" role="menu"
+             style="position: absolute; display: none; right: 0; top: calc(100% + 12px); background: #111; color: #fff;
+                    border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+                    padding: 12px; min-width: 280px; font-family: inherit; z-index: 10001;">
+            <div style="padding: 10px 12px; font-weight: 800; letter-spacing: .4px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 8px;">
+                Khushi Malik
+            </div>
+            <a role="menuitem" href="mailto:thekhushimalik@gmail.com"
+               style="display: block; color: #fff; text-decoration: none; padding: 10px 12px; border-radius: 8px;">
+                📧 thekhushimalik@gmail.com
+            </a>
+            <a role="menuitem" href="https://github.com/thekhushimalik" target="_blank" rel="noopener noreferrer"
+               style="display: block; color: #fff; text-decoration: none; padding: 10px 12px; border-radius: 8px;">
+                🐙 github.com/thekhushimalik
+            </a>
+            <a role="menuitem" href="https://cal.com/thekhushimalik" target="_blank" rel="noopener noreferrer"
+               style="display: block; color: #fff; text-decoration: none; padding: 10px 12px; border-radius: 8px;">
+                📅 cal.com/thekhushimalik
+            </a>
+        </div>
     </div>
     <div id="main">
         <div id="page">
@@ -23,15 +47,11 @@
                 </h1>
                 <!-- <h1><b>CYBER</b>FICTION IS THE <b><i>REAL</i></b> <span>STORY</span> IN THE <span><i>METAVERSE.</i></span></h1> -->
             </div>
-
-
             <div id="txthm">
                 <h3>I am a data scientist with a passion for building models that <br>can help businesses make data-driven decisions.
                     </h3> <br>
                 <h3 id="hmh4">write your tag line or whatever you wanna share <br> "you can add your current job here"</h3>
-
             </div>
-
             <canvas></canvas>
         </div>
         <div id="page1">
@@ -72,14 +92,12 @@
             <div id="text3">
                 <h3>WHO?</h3>
                 <h1>
-
                     NOTE IT DOWN
                     <br>
                     KHUSHI
                     <br>
                     MALIK.
                 </h1>
-
             </div>
         </div>
     </div>
@@ -91,6 +109,46 @@
         integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
-</body>
 
+    <!-- Minimal inline JS to toggle the dropdown without changing structure -->
+    <script>
+        (function () {
+            var btn = document.getElementById('contactBtn');
+            var menu = document.getElementById('contactDropdown');
+
+            if (!btn || !menu) return;
+
+            function toggle(forceOpen) {
+                var open = typeof forceOpen === 'boolean' ? forceOpen : (menu.style.display !== 'block');
+                menu.style.display = open ? 'block' : 'none';
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            }
+
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                toggle();
+            });
+
+            document.addEventListener('click', function (e) {
+                if (menu.style.display === 'block' && !menu.contains(e.target) && e.target !== btn) {
+                    toggle(false);
+                }
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') toggle(false);
+            });
+
+            // Optional subtle press feedback
+            btn.addEventListener('mousedown', function () {
+                btn.style.transform = 'translateY(1px)';
+                btn.style.boxShadow = '0 6px 16px rgba(108,92,231,.3)';
+            });
+            document.addEventListener('mouseup', function () {
+                btn.style.transform = '';
+                btn.style.boxShadow = '0 10px 22px rgba(108,92,231,.35)';
+            });
+        })();
+    </script>
+</body>
 </html>
