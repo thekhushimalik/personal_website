@@ -199,6 +199,8 @@ canvas{
     flex-direction: column;
     gap: 10px;
     margin-top: 28px;
+    position: relative;
+    z-index: 10;
 }
 
 .proj-btn {
@@ -214,6 +216,8 @@ canvas{
     padding: 14px 28px;
     align-self: flex-start;
     position: relative;
+    pointer-events: auto;
+    z-index: 10;
     transition: background 0.2s ease, color 0.2s ease;
 }
 
