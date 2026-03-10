@@ -59,14 +59,12 @@ canvas{
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
-
 #txthm{
     position: absolute;
     bottom: 150px;
     left: 3%;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
 #hmh4{
     position: relative;
     right: -1000px;
@@ -126,6 +124,7 @@ canvas{
     position: absolute;
     top: 30%;
     left: 10%;
+    z-index: 100;
 }
 #page1>#right-text>h3{
     font-weight: 400;
@@ -185,59 +184,54 @@ canvas{
 }
 #page3>#text3>h1{
     font-size: 70px;
-
-}
-#proj-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 28px;
 }
 
+/* ── Project buttons ── */
 #proj-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-top: 28px;
     position: relative;
-    z-index: 10;
+    z-index: 100;
 }
 
 .proj-btn {
     display: inline-block;
     background: #000;
-    color: #fff;
+    color: #fff !important;
     font-family: gilroy, sans-serif;
     font-weight: 500;
     font-size: 15px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-decoration: none;
+    text-decoration: none !important;
     padding: 14px 28px;
     align-self: flex-start;
     position: relative;
-    pointer-events: auto;
-    z-index: 10;
-    transition: background 0.2s ease, color 0.2s ease;
+    z-index: 100;
+    pointer-events: auto !important;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, outline 0.2s ease;
 }
 
 .proj-btn:hover {
-    background: #f1f1f1;
-    color: #000;
-    outline: 1px solid #000;
+    background: #f1f1f1 !important;
+    color: #000 !important;
+    outline: 1.5px solid #000;
     animation: glitch 0.4s linear;
 }
 
 @keyframes glitch {
-    0%   { transform: translate(0); clip-path: none; }
-    10%  { transform: translate(-3px, 1px); clip-path: inset(10% 0 80% 0); }
-    20%  { transform: translate(3px, -1px); clip-path: inset(60% 0 20% 0); }
-    30%  { transform: translate(-2px, 2px); clip-path: inset(30% 0 50% 0); }
-    40%  { transform: translate(2px, -2px); clip-path: inset(80% 0 5% 0); }
-    50%  { transform: translate(-3px, 0px); clip-path: none; }
-    60%  { transform: translate(3px, 1px); clip-path: inset(20% 0 70% 0); }
-    70%  { transform: translate(-1px, -1px); clip-path: inset(50% 0 30% 0); }
-    80%  { transform: translate(2px, 2px); clip-path: none; }
-    90%  { transform: translate(-2px, -1px); clip-path: inset(5% 0 90% 0); }
-    100% { transform: translate(0); clip-path: none; }
+    0%   { transform: translate(0);        }
+    10%  { transform: translate(-3px, 1px); }
+    20%  { transform: translate(3px, -1px); }
+    30%  { transform: translate(-2px, 2px); }
+    40%  { transform: translate(2px, -2px); }
+    50%  { transform: translate(-3px, 0px); }
+    60%  { transform: translate(3px, 1px);  }
+    70%  { transform: translate(-1px,-1px); }
+    80%  { transform: translate(2px, 2px);  }
+    90%  { transform: translate(-2px,-1px); }
+    100% { transform: translate(0);        }
 }
