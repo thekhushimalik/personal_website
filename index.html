@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khushi Malik</title>
+    <title>Khushi Malik — Data Scientist</title>
+    <meta name="description" content="Khushi Malik is a Data Scientist & AI/ML Analyst who builds intelligent systems, LLM pipelines, and AI agents that drive real business impact.">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
@@ -12,136 +14,298 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div id="nav" style="position: relative; z-index: 10000;">
+
+    <!-- Custom cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-trail"></div>
+
+    <!-- Scroll progress bar -->
+    <div id="scroll-bar"></div>
+
+    <!-- Nav -->
+    <div id="nav">
         <h3><b>KHUSHI</b> MALIK</h3>
-        <button id="contactBtn" aria-haspopup="true" aria-expanded="false"
-            style="appearance:none;-webkit-appearance:none;background:transparent;color:#111;border:1px solid #111;padding:10px 20px;border-radius:50px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px;line-height:1;cursor:pointer;transition:all .3s ease;">
-            CONTACT
-        </button>
-        <div id="contactDropdown" role="menu"
-             style="position:absolute;display:none;right:0;top:calc(100% + 12px);background:#fff;color:#111;border:1px solid #e0e0e0;border-radius:12px;padding:8px;min-width:220px;max-width:280px;font-family:'Inter', sans-serif;font-size:13px;line-height:1.4;box-shadow:0 8px 24px rgba(0,0,0,0.12);">
-            <a role="menuitem" href="https://www.linkedin.com/in/thekhushimalik/" target="_blank" rel="noopener noreferrer"
-               style="display:flex;align-items:center;gap:12px;color:#4a4a4a;text-decoration:none;padding:12px 14px;border-radius:8px;transition:all .25s ease;margin-bottom:4px;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                <span style="font-weight:400;">View Profile</span>
-            </a>
-            <a role="menuitem" href="mailto:thekhushimalik@gmail.com"
-               style="display:flex;align-items:center;gap:12px;color:#4a4a4a;text-decoration:none;padding:12px 14px;border-radius:8px;transition:all .25s ease;margin-bottom:4px;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                <span style="font-weight:400;">Drop a Mail</span>
-            </a>
-            <a role="menuitem" href="https://github.com/thekhushimalik" target="_blank" rel="noopener noreferrer"
-               style="display:flex;align-items:center;gap:12px;color:#4a4a4a;text-decoration:none;padding:12px 14px;border-radius:8px;transition:all .25s ease;margin-bottom:4px;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                <span style="font-weight:400;">GitHub</span>
-            </a>
-            <a role="menuitem" href="https://cal.com/thekhushimalik" target="_blank" rel="noopener noreferrer"
-               style="display:flex;align-items:center;gap:12px;color:#4a4a4a;text-decoration:none;padding:12px 14px;border-radius:8px;transition:all .25s ease;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                <span style="font-weight:400;">Book a Call</span>
-            </a>
+        <div style="position:relative;">
+            <button id="contactBtn" aria-haspopup="true" aria-expanded="false">CONTACT</button>
+            <div id="contactDropdown" role="menu">
+                <a role="menuitem" href="https://www.linkedin.com/in/thekhushimalik/" target="_blank"
+                    rel="noopener noreferrer" class="dd-link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                    LinkedIn
+                </a>
+                <a role="menuitem" href="https://github.com/thekhushimalik" target="_blank" rel="noopener noreferrer"
+                    class="dd-link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                    GitHub
+                </a>
+                <a role="menuitem" href="https://cal.com/thekhushimalik" target="_blank" rel="noopener noreferrer"
+                    class="dd-link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Book a Call
+                </a>
+                <a role="menuitem" href="mailto:khushimalik2312@gmail.com" class="dd-link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Drop a Mail
+                </a>
+            </div>
         </div>
     </div>
 
+
+    <!-- ══ MAIN SCROLL CONTAINER ══ -->
     <div id="main">
+
+        <!-- Hero + canvas -->
         <div id="page">
             <div id="loop">
-                <h1><b>THE</b>OG DATA SCIENCTIST <b><i>YOU WANT</i></b> <span>IN YOUR</span> TEAM <span><i></i></span></h1>
+                <h1><b>THE</b> OG DATA SCIENTIST <b><i>YOU WANT</i></b> <span>IN YOUR</span>
+                    TEAM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>THE</b> OG DATA SCIENTIST <b><i>YOU WANT</i></b> <span>IN YOUR</span>
+                    TEAM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
             </div>
             <div id="txthm">
-                <h3>I am a data scientist with a passion for building models that <br>can help businesses make data-driven decisions.</h3> <br>
-                <h3 id="hmh4">write your tag line or whatever you wanna share <br> "you can add your current job here"</h3>
-            </div>
-            <canvas></canvas>
-        </div>
-
-        <div id="page1">
-            <div id="right-text">
-                <h3>PROJECTS</h3>
-                <div id="proj-list" data-scroll-ignore>
-                    <a class="proj-btn" href="financial-doc-qa.html" target="_blank" rel="noopener">Financial Document Analyzer</a>
-                    <a class="proj-btn" href="retell-voice-agent.html" target="_blank" rel="noopener">Retell AI Voice Agent</a>
-                    <a class="proj-btn" href="real-estate-rag.html" target="_blank" rel="noopener">Real Estate RAG Chatbot</a>
+                <h3>I am a Data Scientist &amp; AI/ML Analyst, passionate about building<br>
+                    intelligent systems that help businesses make data-driven decisions.</h3><br>
+                <h3 id="hmh4">Currently @ YourStory Media — building AI pipelines &amp; LLM agents</h3>
+                <div class="hero-cta-row">
+                    <a href="#page1" class="cta-btn primary">View Projects</a>
+                    <a href="https://cal.com/thekhushimalik" target="_blank" rel="noopener noreferrer" class="cta-btn secondary">Book a Call</a>
                 </div>
             </div>
+            <canvas></canvas>
+            <div class="scroll-hint">
+                <div class="scroll-hint-line"></div>
+                <span>SCROLL</span>
+            </div>
+        </div>
+
+        <!-- Page 1 — Projects -->
+        <div id="page1">
+            <div id="right-text">
+                <h3>SELECTED WORK</h3>
+                <h1>PROJECTS</h1>
+            </div>
             <div id="left-text">
-                <h1>MAKE A STORY<br>TAKE A CHANCE<br>BUILD AND OWNED</h1>
-                <h3>..AND MAINTAIN GOOD HUMANITY</h3>
+                <h1>BUILD.<br>SHIP.<br>ITERATE.</h1>
+                <h3>Making data work harder,<br>so businesses don't have to.</h3>
+            </div>
+            <!-- Project overlay — inside page1 so it only shows here -->
+            <div id="proj-overlay">
+                <p class="proj-label">↗ LIVE PROJECTS</p>
+                <div id="proj-list-fixed">
+                    <a class="proj-btn" href="https://huggingface.co/spaces/khushimalik2312/financial-doc-qa" target="_blank" rel="noopener noreferrer">
+                        <span class="proj-num">01</span>
+                        <span class="proj-info">
+                            <span class="btn-main">Financial Document Analyzer</span>
+                            <span class="proj-tech">LLM · RAG · HuggingFace</span>
+                        </span>
+                        <svg class="proj-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                    <a class="proj-btn" href="https://github.com/thekhushimalik/n8n_workflows/tree/main/Calling_agent" target="_blank" rel="noopener noreferrer">
+                        <span class="proj-num">02</span>
+                        <span class="proj-info">
+                            <span class="btn-main">Retell AI Voice Agent</span>
+                            <span class="proj-tech">n8n · Retell AI · Automation</span>
+                        </span>
+                        <svg class="proj-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                    <a class="proj-btn" href="https://github.com/thekhushimalik/n8n_workflows/tree/main/Vector%E2%80%91Store" target="_blank" rel="noopener noreferrer">
+                        <span class="proj-num">03</span>
+                        <span class="proj-info">
+                            <span class="btn-main">Real Estate RAG Chatbot</span>
+                            <span class="proj-tech">Vector DB · n8n · NLP</span>
+                        </span>
+                        <svg class="proj-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                    <a class="proj-btn" href="https://github.com/thekhushimalik" target="_blank" rel="noopener noreferrer" style="border-style:dashed; border-color:#ccc;">
+                        <span class="proj-num">+</span>
+                        <span class="proj-info">
+                            <span class="btn-main">More on GitHub</span>
+                            <span class="proj-tech">thekhushimalik</span>
+                        </span>
+                        <svg class="proj-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                </div>
             </div>
         </div>
 
+        <!-- Page 2 — Experience -->
         <div id="page2">
-            <div id="text1">
-                <h3>EXPERIENCE HERE</h3>
-                <h1>Novus<br>Naval<br>XYZ</h1>
+            <canvas id="noise-canvas"></canvas>
+
+            <!-- Exp nav — inside page2 so GSAP pin doesn't block it -->
+            <div id="exp-overlay">
+                <button class="exp-arrow" id="exp-prev" aria-label="Previous">&#8592;</button>
+                <button class="exp-arrow" id="exp-next" aria-label="Next">&#8594;</button>
+                <div id="exp-dots">
+                    <span class="exp-dot active" data-idx="0"></span>
+                    <span class="exp-dot" data-idx="1"></span>
+                    <span class="exp-dot" data-idx="2"></span>
+                </div>
             </div>
-            <div id="text2">
-                <p>Yahan pe hum batayenge kya kya <br> or kahan kahan seekha humne</p>
+
+            <div id="exp-left-panel">
+                <p class="exp-big-label">EXPERIENCE</p>
+                <div class="exp-big-num" id="exp-big-num">01</div>
+                <p class="exp-role-side" id="exp-role-side">AI/ML Analyst</p>
+                <p class="exp-company-side" id="exp-company-side">YourStory Media</p>
+            </div>
+
+            <div id="exp-track-wrap">
+                <div id="exp-track">
+
+                    <div class="exp-card active">
+                        <div class="exp-card-inner">
+                            <div class="exp-meta">
+                                <span class="exp-num">01</span>
+                                <span class="exp-date">Mar 2025 — Present</span>
+                            </div>
+                            <h2 class="exp-role">AI/ML Analyst</h2>
+                            <p class="exp-company">YourStory Media</p>
+                            <p class="exp-desc">Leading AI initiatives to transform media content workflows using large language models and intelligent automation pipelines.</p>
+                            <ul class="exp-bullets">
+                                <li>Built LLM-powered content analysis pipelines improving editorial efficiency</li>
+                                <li>Designed n8n automation workflows integrating AI agents with media systems</li>
+                                <li>Developed RAG-based knowledge assistants for internal teams</li>
+                            </ul>
+                            <div class="exp-tags"><span>Python</span><span>LLMs</span><span>n8n</span><span>RAG</span></div>
+                        </div>
+                    </div>
+
+                    <div class="exp-card">
+                        <div class="exp-card-inner">
+                            <div class="exp-meta">
+                                <span class="exp-num">02</span>
+                                <span class="exp-date">2024 — 2025</span>
+                            </div>
+                            <h2 class="exp-role">Data Science Freelancer</h2>
+                            <p class="exp-company">Independent Projects</p>
+                            <p class="exp-desc">Delivered end-to-end ML &amp; AI solutions for clients across fintech, real estate, and media domains.</p>
+                            <ul class="exp-bullets">
+                                <li>Built Financial Document QA system deployed on HuggingFace Spaces</li>
+                                <li>Developed voice AI agent using Retell AI + n8n automation</li>
+                                <li>Shipped Real Estate RAG chatbot with vector database integration</li>
+                            </ul>
+                            <div class="exp-tags"><span>HuggingFace</span><span>Retell AI</span><span>Vector DB</span><span>NLP</span></div>
+                        </div>
+                    </div>
+
+                    <div class="exp-card">
+                        <div class="exp-card-inner">
+                            <div class="exp-meta">
+                                <span class="exp-num">03</span>
+                                <span class="exp-date">2022 — 2024</span>
+                            </div>
+                            <h2 class="exp-role">Data Science Learner & Builder</h2>
+                            <p class="exp-company">Academic &amp; Personal Projects</p>
+                            <p class="exp-desc">Deep dived into ML, built a strong foundation in statistical modeling, and shipped 10+ end-to-end projects.</p>
+                            <ul class="exp-bullets">
+                                <li>Mastered Python data stack: Pandas, NumPy, Scikit-learn, PyTorch</li>
+                                <li>Built expertise in NLP, Computer Vision, and time-series analysis</li>
+                                <li>Completed 10+ end-to-end ML projects from EDA to deployment</li>
+                            </ul>
+                            <div class="exp-tags"><span>Pandas</span><span>PyTorch</span><span>Scikit-learn</span><span>SQL</span></div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
 
+        <!-- Page 3 — About -->
         <div id="page3">
-            <div id="text3">
-                <h3>WHO?</h3>
-                <h1>NOTE IT DOWN<br>KHUSHI<br>MALIK.</h1>
+            <div class="about-grid">
+                <div class="about-left">
+                    <p class="about-label">WHO?</p>
+                    <h2 class="about-name">KHUSHI<br>MALIK.</h2>
+                    <div class="about-divider"></div>
+                    <p class="about-bio">
+                        Data Scientist with a knack for building AI-powered solutions that work in the real world.
+                        I specialize in <strong>Large Language Models</strong>, <strong>RAG systems</strong>, and
+                        <strong>intelligent automation</strong> — turning complex data problems into production-ready solutions.
+                    </p>
+                    <div class="skills-grid">
+                        <div class="skill-chip">Python</div>
+                        <div class="skill-chip">Machine Learning</div>
+                        <div class="skill-chip">LLMs / RAG</div>
+                        <div class="skill-chip">n8n Automation</div>
+                        <div class="skill-chip">HuggingFace</div>
+                        <div class="skill-chip">SQL</div>
+                        <div class="skill-chip">PyTorch</div>
+                        <div class="skill-chip">Vector DBs</div>
+                        <div class="skill-chip">Retell AI</div>
+                        <div class="skill-chip">Data Visualisation</div>
+                    </div>
+                </div>
+                <div class="about-right">
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">3+</span>
+                            <span class="stat-label">Live AI Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">∞</span>
+                            <span class="stat-label">Lines of Python</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">1</span>
+                            <span class="stat-label">Goal: Build things that matter</span>
+                        </div>
+                    </div>
+                    <div class="about-links">
+                        <a href="https://www.linkedin.com/in/thekhushimalik/" target="_blank" rel="noopener noreferrer" class="about-link-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/thekhushimalik" target="_blank" rel="noopener noreferrer" class="about-link-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            GitHub
+                        </a>
+                        <a href="https://cal.com/thekhushimalik" target="_blank" rel="noopener noreferrer" class="about-link-btn highlight">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            Book a Call
+                        </a>
+                    </div>
+                </div>
             </div>
+
+            <footer id="footer">
+                <p>© 2025 Khushi Malik. Built with curiosity &amp; caffeine ☕</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/thekhushimalik/" target="_blank" rel="noopener noreferrer">LI</a>
+                    <a href="https://github.com/thekhushimalik" target="_blank" rel="noopener noreferrer">GH</a>
+                    <a href="https://cal.com/thekhushimalik" target="_blank" rel="noopener noreferrer">CAL</a>
+                </div>
+            </footer>
         </div>
-    </div>
+
+    </div><!-- /#main -->
 
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
-        integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
-        integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
 
-    <script>
-        (function () {
-            var btn = document.getElementById('contactBtn');
-            var menu = document.getElementById('contactDropdown');
-            if (!btn || !menu) return;
-
-            function toggle(forceOpen) {
-                var open = typeof forceOpen === 'boolean' ? forceOpen : (menu.style.display !== 'block');
-                menu.style.display = open ? 'block' : 'none';
-                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-            }
-
-            btn.addEventListener('click', function (e) { e.stopPropagation(); toggle(); });
-            document.addEventListener('click', function (e) {
-                if (menu.style.display === 'block' && !menu.contains(e.target) && e.target !== btn) toggle(false);
-            });
-            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') toggle(false); });
-
-            btn.addEventListener('mouseenter', function () { btn.style.background='#111';btn.style.color='#fff';btn.style.transform='translateY(-1px)';btn.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'; });
-            btn.addEventListener('mouseleave', function () { btn.style.background='transparent';btn.style.color='#111';btn.style.transform='translateY(0)';btn.style.boxShadow='none'; });
-
-            Array.prototype.forEach.call(menu.querySelectorAll('a[role="menuitem"]'), function(a){
-                a.addEventListener('mouseenter', function(){ a.style.background='#f5f5f5';a.style.transform='translateX(2px)'; });
-                a.addEventListener('mouseleave', function(){ a.style.background='transparent';a.style.transform='translateX(0)'; });
-            });
-
-            /* Project buttons — JS hover bypasses Locomotive Scroll pointer interception */
-            document.querySelectorAll('.proj-btn').forEach(function(el) {
-                el.addEventListener('mouseenter', function() {
-                    el.style.background = '#f1f1f1';
-                    el.style.color = '#000';
-                    el.style.outline = '1.5px solid #000';
-                });
-                el.addEventListener('mouseleave', function() {
-                    el.style.background = '#000';
-                    el.style.color = '#fff';
-                    el.style.outline = 'none';
-                });
-                el.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    window.open(el.getAttribute('href'), '_blank');
-                });
-            });
-        })();
-    </script>
 </body>
+
 </html>
