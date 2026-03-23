@@ -616,3 +616,26 @@ gsap.to("#page3", {
     was the main cause of scroll lag on page2)
 ══════════════════════════════════════ */
 // No JS noise loop needed — see #page2::after in style.css
+
+
+/* ══════════════════════════════════════
+   8. GSAP PIN-SPACER CLICK-THROUGH FIX
+   GSAP's pin:true wraps each section in a
+   .pin-spacer div that swallows mouse events.
+   After ScrollTrigger refreshes we patch every
+   spacer so links / buttons inside still work.
+══════════════════════════════════════ */
+(function fixPinSpacerPointerEvents() {
+  function patch() {
+    document.querySelectorAll('.pin-spacer').forEach(spacer => {
+      spacer.style.pointerEvents = 'none';
+      const child = spacer.firstElementChild;
+      // Never restore pointer-events on canvas — it's purely decorative
+      if (child && child.tagName !== 'CANVAS') {
+        child.style.pointerEvents = 'all';
+      }
+    });
+  }
+  ScrollTrigger.addEventListener('refresh', patch);
+  setTimeout(patch, 300);
+})();
