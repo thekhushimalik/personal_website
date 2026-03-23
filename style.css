@@ -59,7 +59,7 @@ canvas{
 #loop>h1{
     font-weight: 400;
     animation-name: anim;
-    animation-duration: 15s;
+    animation-duration: 25s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
